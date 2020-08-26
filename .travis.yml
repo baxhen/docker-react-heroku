@@ -13,5 +13,8 @@ deploy:
   provider: heroku
   api_key: $HEROKU_ACCESS_KEY
   app: docker-react-heroku-baxhen
+  script:
+    - heroku container:push web -a docker-react-heroku-baxhen
+    - heroku container:release web -a docker-react-heroku-baxhen
   on:
     branch: master
